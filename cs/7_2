@@ -1,0 +1,21 @@
+using System;
+
+public static class Kata
+{
+    public static string Disemvowel(string str)
+    {
+// Удаляем гласные из строки
+        string vowels = "aeiouAEIOU";
+        string result = "";
+
+        foreach (char c in str)
+        {
+            if (!vowels.Contains(c)) // Проверяем, не является ли символ гласной
+            {
+                result += c; // Добавляем символ в результат
+            }
+        }
+
+        return result;
+    }
+}
