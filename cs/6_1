@@ -1,0 +1,24 @@
+using System;
+
+public static class Kata 
+{
+    public static string ExpandedForm(long num) 
+    {
+ string result = "";
+        long placeValue = 1;
+
+        while (num > 0)
+        {
+            long digit = num % 10; // Получаем последнюю цифру
+            if (digit != 0)
+            {
+                string expandedPart = (digit * placeValue).ToString();
+                result = expandedPart + (result == "" ? "" : " + " + result); // Добавляем развернутую часть
+            }
+            num /= 10; // Убираем последнюю цифру
+            placeValue *= 10; // Переходим к следующему разряду
+        }
+
+        return result;
+    }
+}
