@@ -1,0 +1,17 @@
+using System;
+
+public class Kata
+{
+    public static int SquareDigits(int n)
+    {
+        string result = "";
+
+        foreach (char digit in n.ToString())
+        {
+            int num = int.Parse(digit.ToString()); // Преобразуем символ в число
+            result += (num * num).ToString(); // Возводим в квадрат и добавляем к строке
+        }
+
+        return int.Parse(result); // Преобразуем строку обратно в число
+    }
+}
