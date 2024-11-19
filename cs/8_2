@@ -1,0 +1,19 @@
+ using System;
+
+public static class Kata
+{
+  public static int Enough(int cap, int on, int wait)
+  {
+          // Рассчитываем количество людей, которые смогут войти
+        int totalPeople = on + wait;
+        
+        // Если места хватает, возвращаем 0
+        if (totalPeople <= cap)
+        {
+            return 0;
+        }
+        
+        // Если места не хватает, возвращаем количество лишних пассажиров
+        return totalPeople - cap;
+  }
+}
