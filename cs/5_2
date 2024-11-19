@@ -1,0 +1,21 @@
+class CaesarCipher:
+    def __init__(self, shift):
+        self.shift = shift
+
+    def encode(self, st):
+        return self._shift_string(st, self.shift)
+
+    def decode(self, st):
+        return self._shift_string(st, -self.shift)
+
+    def _shift_string(self, st, shift):
+        result = []
+        for char in st:
+            if char.isalpha():  # Проверяем, является ли символ буквой
+                base = ord('A') if char.isupper() else ord('a')
+                # Вычисляем новую позицию символа в алфавите
+                new_char = chr((ord(char) - base + shift) % 26 + base)
+                result.append(new_char)
+            else:
+                result.append(char)  # Оставляем символ без изменений
+        return ''.join(result)
