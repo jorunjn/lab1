@@ -111,7 +111,7 @@ public class Kata
 }
 
 
-//6_1
+//6_3
 
 using System;
 
@@ -188,7 +188,7 @@ public static int DigitalRoot(long n)
     }
 }
 
-// 5_1
+// 5_3
 
 using System;
 
